@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>今日のゲットチャレンジ</title>
+
+  <style>
+
+    body {
+      background-color: #1e1e1e;
+      color: white;
+      text-align: center;
+      font-family: sans-serif;
+      margin-top: 100px;
+    }
+
+    button {
+      font-size: 24px;
+      padding: 15px 40px;
+      border-radius: 15px;
+      border: none;
+      background-color: gold;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 40px;
+      font-size: 40px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <h1>今日のゲットチャレンジ</h1>
+
+  <button onclick="chooseCard()">
+    選ぶ！
+  </button>
+
+  <h2 id="result">
+    ？
+  </h2>
+
+  <script>
+
+    function chooseCard() {
+
+      const choices = [
+        "いつもの真ん中!!!!!!",
+        "左上の気分",
+        "やっぱり右上かな",
+        "左下が気になる",
+        "見えた、右下"
+      ];
+
+      const result =
+        choices[Math.floor(Math.random() * choices.length)];
+
+      document.getElementById("result").textContent =
+        result;
+    }
+
+  </script>
+
+</body>
+</html>
