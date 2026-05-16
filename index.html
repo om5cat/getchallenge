@@ -57,6 +57,13 @@ button{
     color:gold;
 }
 
+    .question{
+    font-size: 28px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    color: white;
+}
+    
 </style>
 </head>
 
@@ -86,6 +93,10 @@ function drawCard(){
     number + "枚目！";
 
     document.getElementById("judgeButtons").innerHTML = `
+    
+    <p class="question">結果は？</p>
+
+    
     <button class="good" onclick="goodResult()">
     最高！
     </button>
