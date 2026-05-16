@@ -87,10 +87,19 @@ button{
 
 function drawCard(){
 
-    let number = Math.floor(Math.random()*5)+1;
+    const choices = [
+        "いつもの真ん中!!!!!",
+        "見えた、右下",
+        "左上が光ってる…",
+        "右上しかないっしょ",
+        "左下の確率51%"
+    ];
+
+    const result =
+    choices[Math.floor(Math.random() * choices.length)];
 
     document.getElementById("result").innerHTML =
-    number + "枚目！";
+    result;
 
     document.getElementById("judgeButtons").innerHTML = `
     
@@ -113,11 +122,11 @@ function drawCard(){
 function goodResult(){
 
     let messages = [
-        "神引き！！！！",
-        "今日は持ってる🔥",
-        "その選択、完璧。",
-        "運を支配している。",
-        "波が来てる！！！"
+        "よかたね！",
+        "まあ当然だが。",
+        "僕も嬉しいです🥹",
+        "その代わり明日は…",
+        "もう課金すんなよっ"
     ];
 
     let random =
@@ -132,10 +141,10 @@ function goodResult(){
 function badResult(){
 
     let excuses = [
-        "指が滑った…",
-        "今のシャッフル速すぎた。",
-        "端は危険だった。",
-        "欲を出した結果…。",
+        "ごめんね(*´ω｀*)”,
+        "やり方間違えちゃった？",
+        "すまんとしか言えん",
+        "欲を出した結果…か",
         "これは逆にレア。"
     ];
 
