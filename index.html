@@ -1,68 +1,155 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>今日のゲットチャレンジ</title>
+<meta charset="UTF-8">
+<title>ゲットチャレンジ決定機</title>
 
-  <style>
+<style>
 
-    body {
-      background-color: #1e1e1e;
-      color: white;
-      text-align: center;
-      font-family: sans-serif;
-      margin-top: 100px;
-    }
+body{
+    background:#1e1e1e;
+    color:white;
+    font-family:sans-serif;
+    text-align:center;
+    margin-top:80px;
+}
 
-    button {
-      font-size: 24px;
-      padding: 15px 40px;
-      border-radius: 15px;
-      border: none;
-      background-color: gold;
-      cursor: pointer;
-    }
+h1{
+    font-size:40px;
+}
 
-    #result {
-      margin-top: 40px;
-      font-size: 40px;
-    }
+button{
+    padding:15px 35px;
+    font-size:22px;
+    border:none;
+    border-radius:15px;
+    cursor:pointer;
+    margin:10px;
+}
 
-  </style>
+#mainButton{
+    background:gold;
+}
+
+.good{
+    background:#4CAF50;
+    color:white;
+}
+
+.bad{
+    background:#ff4444;
+    color:white;
+}
+
+#result{
+    font-size:60px;
+    margin-top:40px;
+}
+
+#message{
+    margin-top:30px;
+    font-size:28px;
+}
+
+#omikuji{
+    margin-top:20px;
+    font-size:32px;
+    color:gold;
+}
+
+</style>
 </head>
 
 <body>
 
-  <h1>今日のゲットチャレンジ</h1>
+<h1>ゲットチャレンジ決定機</h1>
 
-  <button onclick="chooseCard()">
-    選ぶ！
-  </button>
+<button id="mainButton" onclick="drawCard()">
+選ぶ！
+</button>
 
-  <h2 id="result">
-    ？
-  </h2>
+<div id="result">？</div>
 
-  <script>
+<div id="judgeButtons"></div>
 
-    function chooseCard() {
+<div id="message"></div>
 
-      const choices = [
-        "いつもの真ん中!!!!!!",
-        "左上の気分",
-        "やっぱり右上かな",
-        "左下が気になる",
-        "見えた、右下"
-      ];
+<div id="omikuji"></div>
 
-      const result =
-        choices[Math.floor(Math.random() * choices.length)];
+<script>
 
-      document.getElementById("result").textContent =
-        result;
-    }
+function drawCard(){
 
-  </script>
+    let number = Math.floor(Math.random()*5)+1;
+
+    document.getElementById("result").innerHTML =
+    number + "枚目！";
+
+    document.getElementById("judgeButtons").innerHTML = `
+    <button class="good" onclick="goodResult()">
+    最高！
+    </button>
+
+    <button class="bad" onclick="badResult()">
+    最低…
+    </button>
+    `;
+
+    document.getElementById("message").innerHTML = "";
+    document.getElementById("omikuji").innerHTML = "";
+}
+
+function goodResult(){
+
+    let messages = [
+        "神引き！！！！",
+        "今日は持ってる🔥",
+        "その選択、完璧。",
+        "運を支配している。",
+        "波が来てる！！！"
+    ];
+
+    let random =
+    Math.floor(Math.random()*messages.length);
+
+    document.getElementById("message").innerHTML =
+    messages[random];
+
+    document.getElementById("omikuji").innerHTML = "";
+}
+
+function badResult(){
+
+    let excuses = [
+        "指が滑った…",
+        "今のシャッフル速すぎた。",
+        "端は危険だった。",
+        "欲を出した結果…。",
+        "これは逆にレア。"
+    ];
+
+    let random =
+    Math.floor(Math.random()*excuses.length);
+
+    document.getElementById("message").innerHTML =
+    excuses[random];
+
+    let luck = [
+        "大吉🌈",
+        "中吉✨",
+        "吉🍀",
+        "小吉🙂",
+        "凶☠️"
+    ];
+
+    let randomLuck =
+    Math.floor(Math.random()*luck.length);
+
+    document.getElementById("omikuji").innerHTML =
+    "運気回復おみくじ：" + luck[randomLuck];
+}
+
+</script>
 
 </body>
 </html>
