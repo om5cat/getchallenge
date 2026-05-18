@@ -203,7 +203,53 @@ button{
 #judgeButtons:empty{
     display:none;
 }    
-    
+
+    .happy{
+    animation: happyMove 0.5s infinite;
+}
+
+.sad{
+    animation: sadMove 0.2s infinite;
+    filter: hue-rotate(-40deg);
+}
+
+@keyframes happyMove{
+
+    0%{
+        transform:translateX(-50%) translateY(0px) rotate(0deg);
+    }
+
+    50%{
+        transform:translateX(-50%) translateY(-25px) rotate(5deg);
+    }
+
+    100%{
+        transform:translateX(-50%) translateY(0px) rotate(0deg);
+    }
+}
+
+@keyframes sadMove{
+
+    0%{
+        transform:translateX(-50%) rotate(-2deg);
+    }
+
+    25%{
+        transform:translateX(-50%) rotate(2deg);
+    }
+
+    50%{
+        transform:translateX(-50%) rotate(-3deg);
+    }
+
+    75%{
+        transform:translateX(-50%) rotate(3deg);
+    }
+
+    100%{
+        transform:translateX(-50%) rotate(-2deg);
+    }
+}
     
 </style>
 </head>
@@ -263,6 +309,9 @@ function drawCard(){
 
     document.getElementById("message").innerHTML = "";
     document.getElementById("omikuji").innerHTML = "";
+
+    document.getElementById("michibiku").className =
+"";
 }
 
 function goodResult(){
@@ -282,6 +331,9 @@ function goodResult(){
     messages[random];
 
     document.getElementById("omikuji").innerHTML = "";
+
+    document.getElementById("michibiku").className =
+"happy";
 }
 
 function badResult(){
@@ -313,6 +365,9 @@ function badResult(){
 
     document.getElementById("omikuji").innerHTML =
     "運気回復おみくじ：" + luck[randomLuck];
+
+    document.getElementById("michibiku").className =
+"sad";
 }
 
 </script>
