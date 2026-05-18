@@ -154,6 +154,27 @@ button{
     display:none;
 }    
     
+#analysisTitle{
+
+    font-size:28px;
+
+    margin-top:25px;
+
+    margin-bottom:15px;
+
+    background:rgba(0,0,0,0.5);
+
+    display:inline-block;
+
+    padding:10px 25px;
+
+    border-radius:15px;
+}   
+
+#analysisTitle:empty{
+    display:none;
+}
+    
 </style>
 </head>
 
@@ -166,6 +187,8 @@ button{
 <button id="mainButton" onclick="drawCard()">
 選ぶ！
 </button>
+
+<div id="analysisTitle"></div>
 
 <div id="result"></div>
 
@@ -193,6 +216,9 @@ function drawCard(){
     document.getElementById("result").innerHTML =
     result;
 
+    document.getElementById("analysisTitle").innerHTML =
+    "解析結果";
+    
     document.getElementById("judgeButtons").innerHTML = `
     
     <p class="question">結果は？</p>
