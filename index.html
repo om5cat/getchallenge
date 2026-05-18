@@ -82,16 +82,14 @@ button{
 }
 
 #mainButton{
-
     background:gold;
-
     padding:28px 60px;
-
     font-size:42px;
-
     border-radius:25px;
-
     box-shadow:0 0 25px gold;
+
+    display:block;
+    margin:25px auto 20px auto;
 }
 
 .good{
@@ -105,14 +103,15 @@ button{
 }
 
 #result{
-    font-size:60px;
-    margin-top:40px;
+    font-size:42px;
+    margin:0 auto 25px auto;
 
     background:rgba(0,0,0,0.55);
-    display:inline-block;
+    display:block;
+    width:fit-content;
 
-    padding:15px 25px;
-    border-radius:20px;
+    padding:15px 30px;
+    border-radius:18px;
 
     text-shadow:0 0 10px black;
 }
@@ -193,8 +192,8 @@ function drawCard(){
 
     document.getElementById("mainButton").innerHTML =
     "解析結果";
-
-    document.getElementById("mainButton").disabled = true;
+    
+    document.getElementById("mainButton").onclick = null;
 
     document.getElementById("result").innerHTML =
     result;
