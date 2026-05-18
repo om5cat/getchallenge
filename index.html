@@ -22,36 +22,44 @@ body{
 }
     
 #michibiku{
-    width:380px;
 
-    display:block;
-    margin:0 auto;
+    width:260px;
 
-    animation: ponkotsu 2s infinite;
+    position:fixed;
+
+    bottom:60px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    animation:ponkotsu 2s infinite;
+
+    z-index:1;
 }
 
 @keyframes ponkotsu{
 
     0%{
-        transform: translate(0,0) rotate(0deg);
+        transform:translateX(-50%) translateY(0px) rotate(0deg);
     }
 
     25%{
-        transform: translate(2px,-2px) rotate(1deg);
+        transform:translateX(-50%) translateY(-2px) rotate(1deg);
     }
 
     50%{
-        transform: translate(-2px,1px) rotate(-1deg);
+        transform:translateX(-50%) translateY(1px) rotate(-1deg);
     }
 
     75%{
-        transform: translate(1px,2px) rotate(1deg);
+        transform:translateX(-50%) translateY(-1px) rotate(1deg);
     }
 
     100%{
-        transform: translate(0,0) rotate(0deg);
+        transform:translateX(-50%) translateY(0px) rotate(0deg);
     }
 }
+
     
 h1{
     font-size:40px;
