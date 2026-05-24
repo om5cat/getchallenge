@@ -21,9 +21,7 @@ body{
     min-height:100vh;
 }
     
-#michibiku{
-
-    width:600px;
+#characters{
 
     position:fixed;
 
@@ -32,9 +30,23 @@ body{
 
     transform:translateX(-50%);
 
-    animation: ponkotsu 1.8s infinite;
-    
+    display:flex;
+    align-items:flex-end;
+    gap:120px;
+
     z-index:1;
+}
+
+#michibiku{
+
+    width:420px;
+
+    animation: ponkotsu 1.8s infinite;
+}
+
+#shigodeki{
+
+    width:420px;
 }
 
 
@@ -258,7 +270,13 @@ button{
 
 <h1>ゲットチャレンジ導くくん</h1>
 
+<div id="characters">
+
 <img src="導くくんver3.png" id="michibiku">
+
+<img src="しごできくん.png" id="shigodeki">
+
+</div>
 
 <button id="mainButton" onclick="drawCard()">
 解析開始
