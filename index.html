@@ -24,26 +24,27 @@ body{
 #characters{
     position:fixed;
     bottom:20px;
-    left:0;
-    width:100%;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+
+    gap:-30px;
 
     z-index:1;
 }
 
 #michibiku{
-    width:330px;
-    position:absolute;
-    left:5px;
-    bottom:0;
+    width:340px;
 
     animation:ponkotsu 1.8s infinite;
 }
 
 #shigodeki{
-    width:340px;
-    position:absolute;
-    right:5px;
-    bottom:0;
+    width:350px;
 }
 
 #michibiku{
