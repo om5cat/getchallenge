@@ -22,32 +22,28 @@ body{
 }
     
 #characters{
-
     position:fixed;
-
-    bottom:60px;
+    bottom:45px;
     left:50%;
-
     transform:translateX(-50%);
 
     display:flex;
     align-items:flex-end;
-    gap:120px;
+    justify-content:center;
+    gap:40px;
 
     z-index:1;
 }
 
-#michibiku{
-
-    width:420px;
-
-    animation: ponkotsu 1.8s infinite;
-}
-
+#michibiku,
 #shigodeki{
-
-    width:420px;
+    width:300px;
 }
+
+#michibiku{
+    animation:ponkotsu 1.8s infinite;
+}
+
 
 
 @keyframes ponkotsu{
