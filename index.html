@@ -108,7 +108,29 @@ button{
 
     border-radius:18px;
 }
+    
+#mode{
+    font-size:32px;
 
+    margin:0 auto 20px auto;
+
+    background:rgba(0,0,0,0.55);
+
+    display:block;
+
+    width:fit-content;
+
+    padding:12px 25px;
+
+    border-radius:18px;
+
+    text-shadow:0 0 10px black;
+}
+
+#mode:empty{
+    display:none;
+}
+    
 #result{
     font-size:42px;
     margin:0 auto 25px auto;
@@ -206,6 +228,8 @@ button{
 解析開始
 </button>
 
+<div id="mode"></div>
+    
 <div id="result"></div>
 
 <div id="judgeButtons"></div>
@@ -218,6 +242,17 @@ button{
 
 function drawCard(){
 
+const modes = [
+    "いつものポンコツ解析",
+    "無理して本気解析"
+];
+
+const mode =
+modes[Math.floor(Math.random() * modes.length)];
+
+document.getElementById("mode").innerHTML =
+mode;
+    
     const choices = [
         "いつもの真ん中!!!!!",
         "見えた、右下",
