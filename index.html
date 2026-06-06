@@ -87,6 +87,21 @@ button{
     margin:25px auto 20px auto;
 }
 
+.modeButton{
+
+    background:#444;
+
+    color:white;
+
+    font-size:28px;
+
+    padding:18px 25px;
+
+    border-radius:20px;
+
+    margin:10px;
+}
+    
 .good{
     background:#4CAF50;
     color:white;
@@ -224,10 +239,28 @@ button{
 
 </div>
 
-<button id="mainButton" onclick="drawCard()">
+<button id="mainButton" >
 解析開始
 </button>
 
+<div id="modeButtons">
+
+<button class="modeButton"
+onclick="drawCard('ponkotsu')">
+
+いつものポンコツ解析
+
+</button>
+
+<button class="modeButton"
+onclick="drawCard('serious')">
+
+無理して本気解析
+
+</button>
+
+</div>
+    
 <div id="mode"></div>
     
 <div id="result"></div>
@@ -240,7 +273,7 @@ button{
 
 <script>
 
-function drawCard(){
+function drawCard(mode){
 
 const modes = [
     "いつものポンコツ解析",
@@ -261,6 +294,17 @@ mode;
         "左下の確率51%"
     ];
 
+if(mode === "ponkotsu"){
+
+    document.getElementById("mode").innerHTML =
+    "いつものポンコツ解析";
+
+}else{
+
+    document.getElementById("mode").innerHTML =
+    "無理して本気解析";
+}
+    
     const result =
     choices[Math.floor(Math.random() * choices.length)];
 
