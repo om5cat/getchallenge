@@ -282,7 +282,7 @@ onclick="drawCard('ponkotsu')">
 <button class="modeButton"
 onclick="drawCard('serious')">
 
-無理して本気解析
+頑張って本気解析
 
 </button>
 
@@ -301,8 +301,15 @@ onclick="drawCard('serious')">
 <script>
 
 function drawCard(mode){
+
+let choices;
+
+if(mode === "ponkotsu"){
+
+    document.getElementById("mode").innerHTML =
+    "いつものポンコツ解析";
     
-    const choices = [
+    choices = [
         "いつもの真ん中だよ！",
         "えっとね〜、み…右下！",
         "左上が光ってる…？んん？",
@@ -310,15 +317,18 @@ function drawCard(mode){
         "左下の確率21%！チャンス！"
     ];
 
-if(mode === "ponkotsu"){
-
-    document.getElementById("mode").innerHTML =
-    "いつものポンコツ解析";
-
 }else{
 
     document.getElementById("mode").innerHTML =
-    "無理して本気解析";
+    "頑張って本気解析";
+
+    choices = [
+        "演算結果：右上",
+        "左下が最適解",
+        "中央を推奨",
+        "右下の確率91%",
+        "左上で確定"
+    ];
 }
 
     document.getElementById("modeButtons").style.display = "none";
