@@ -274,17 +274,6 @@ onclick="drawCard('serious')">
 <script>
 
 function drawCard(mode){
-
-const modes = [
-    "いつものポンコツ解析",
-    "無理して本気解析"
-];
-
-const mode =
-modes[Math.floor(Math.random() * modes.length)];
-
-document.getElementById("mode").innerHTML =
-mode;
     
     const choices = [
         "いつもの真ん中!!!!!",
@@ -304,6 +293,8 @@ if(mode === "ponkotsu"){
     document.getElementById("mode").innerHTML =
     "無理して本気解析";
 }
+
+    document.getElementById("modeButtons").style.display = "none";
     
     const result =
     choices[Math.floor(Math.random() * choices.length)];
